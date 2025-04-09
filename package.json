@@ -1,0 +1,22 @@
+{
+  "name": "invoices",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "commit": "sui-mono commit",
+    "build": "sui-mono run npm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@s-ui/mono": "^2.45.0"
+  }
+}
