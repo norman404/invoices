@@ -1,7 +1,8 @@
 import { Module } from '@nestjs/common'
-import { AuthController } from './auth.controller'
-import { AuthService } from './auth.service'
+import { AuthController } from './interfaces/controllers/auth.controller'
 import { JwtModule } from '@nestjs/jwt'
+import { LoginUseCase } from './application/use-cases/login.use-case'
+import { JwtTokenService } from './infrastructure/services/jwt-token.service'
 
 @Module({
   imports: [
@@ -10,7 +11,15 @@ import { JwtModule } from '@nestjs/jwt'
       signOptions: { expiresIn: '1h' }
     })
   ],
-  controllers: [AuthController],
-  providers: [AuthService]
+  controllers: [
+    AuthController
+  ],
+  providers: [
+    // use case
+    LoginUseCase,
+    
+    // infrastructure
+    { provide: 'TokenService', useClass: JwtTokenService }
+  ]
 })
 export class AuthModule {}

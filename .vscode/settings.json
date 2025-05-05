@@ -1,0 +1,15 @@
+{
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  "editor.formatOnSave": false, // No usar formateo automático para evitar conflictos
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always" // Que ESLint corrija lo necesario
+  },
+  "eslint.validate": ["javascript", "typescript"],
+  "files.exclude": {
+    "**/dist": true,
+    "**/node_modules": true
+  },
+  "typescript.tsdk": "node_modules/typescript/lib"
+}

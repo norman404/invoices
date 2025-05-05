@@ -1,9 +1,9 @@
-import { DashboardLayout } from './dashboard/layout/DashboardLayout'
+import { AppRouter } from './AppRouter'
 
 function App() {
   return (
     <>
-      <DashboardLayout />
+      <AppRouter />
     </>
   )
 }
