@@ -13,6 +13,11 @@ async function bootstrap () {
       enableImplicitConversion: true
     }
   }))
+  app.enableCors({
+    origin: '*',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true
+  })
   app.setGlobalPrefix('api')
 
   await app.listen(process.env.PORT ?? 3000)

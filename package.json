@@ -18,5 +18,8 @@
   "description": "",
   "devDependencies": {
     "@s-ui/mono": "^2.45.0"
+  },
+  "dependencies": {
+    "zustand": "^5.0.4"
   }
 }
