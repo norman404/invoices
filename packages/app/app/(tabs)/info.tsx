@@ -12,9 +12,9 @@ import {
 import * as DocumentPicker from 'expo-document-picker';
 
 const InfoScreen = () => {
-  const [rfc, setRfc] = useState('');
-  const [name, setName] = useState('');
-  const [address, setAddress] = useState('');
+  const [rfc, setRfc] = useState('XAXX010101000');
+  const [name, setName] = useState('Norman Torres');
+  const [address, setAddress] = useState('Av. López Mateos 123, Guadalajara, Jalisco');
   const [cerFile, setCerFile] = useState(null);
   const [keyFile, setKeyFile] = useState(null);
 
@@ -35,7 +35,6 @@ const InfoScreen = () => {
       return;
     }
 
-    // Aquí podrías hacer un POST a tu backend o guardarlo en Zustand
     console.log({ rfc, name, address, cerFile, keyFile });
     Alert.alert('Información guardada', 'Tu información fiscal se ha guardado correctamente.');
   };

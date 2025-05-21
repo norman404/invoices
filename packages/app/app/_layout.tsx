@@ -6,7 +6,6 @@ import { DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { Stack } from 'expo-router'
 import { StatusBar, Text } from 'react-native';
 
-
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {

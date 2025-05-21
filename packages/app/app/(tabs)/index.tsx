@@ -11,6 +11,7 @@ import {
   StatusBar,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { useRouter} from 'expo-router'
 
 const invoicesMock = [
   { id: '1', rfc: 'XAXX010101000', total: '$1,500.00', date: '2024-09-10' },
@@ -19,7 +20,8 @@ const invoicesMock = [
 ];
 
 const HomeScreen = () => {
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState('')
+  const router = useRouter()
 
   const filteredInvoices = invoicesMock.filter(invoice =>
     invoice.rfc.toLowerCase().includes(search.toLowerCase())
@@ -36,17 +38,17 @@ const HomeScreen = () => {
 
       <View style={styles.buttonsContainer}>
         <View style={styles.actionWrapper}>
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity style={styles.button} onPress={() => router.push('/invoices/add')}>
             <Ionicons name="add-circle-outline" size={30} color="#fff" />
           </TouchableOpacity>
-          <Text style={styles.actionLabel}>Agregar</Text>
+          <Text style={styles.actionLabel}>Agregar RFC</Text>
         </View>
 
         <View style={styles.actionWrapper}>
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity style={styles.button} onPress={() => router.push('/invoices/new')}>
             <Ionicons name="document-text-outline" size={30} color="#fff" />
           </TouchableOpacity>
-          <Text style={styles.actionLabel}>Crear</Text>
+          <Text style={styles.actionLabel}>Crear Factura</Text>
         </View>
       </View>
 

@@ -8,11 +8,14 @@ import {
   Alert,
   StatusBar,
 } from 'react-native';
+import { useAuthStore } from '@/src/auth/store/useAuthStore'
 
 const ProfileScreen = () => {
+  const { logout } = useAuthStore()
   const handleLogout = () => {
     // Aquí iría tu lógica real de logout
     // Por ejemplo: authStore.logout() o remover token
+    logout()
     Alert.alert('Sesión cerrada', 'Has cerrado sesión correctamente.');
   };
 
